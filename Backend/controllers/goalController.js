@@ -1,15 +1,19 @@
-const getGoals = (req, res) => {
+const asyncHandler =  require('async-handle');
+const getGoals = asyncHandler((req, res) => {
     res.status(200).json({message: 'Get goals'});
-}
-const setGoal = (req, res) => {
+})
+
+const setGoal = asyncHandler((req, res) => {
     res.status(200).json({message: 'Set goal first'});
-}
-const updateGoal = (req, res) => {
+})
+
+const updateGoal = asyncHandler((req, res) => {
     res.status(200).send({message: `update goal ${req.params.id}`});
-}
-const deleteGoal = (req, res) => {
+})
+
+const deleteGoal = asyncHandler((req, res) => {
     res.status(200).send({message: `delete goal ${req.params.id}`});
-}
+})
 
 
 module.exports = {
